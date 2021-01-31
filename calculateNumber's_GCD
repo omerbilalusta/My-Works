@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+
+int ebobbul(int sayi1, int sayi2)
+{
+	if(sayi2==0)
+		return sayi1;
+	else
+		return ebobbul(sayi2,(sayi1%sayi2));
+}
+
+
+
+
+int main()
+{
+	int sayi1,sayi2;
+	printf("sayi giriniz");	scanf("%d",&sayi1);
+	printf("bir sayi daha giriniz");	scanf("%d",&sayi2);
+	printf("%d",ebobbul(sayi1,sayi2));
+	return 0;	
+}
