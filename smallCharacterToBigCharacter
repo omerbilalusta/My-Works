@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+	char cumle[100];
+	printf("cumle giriniz");
+	gets(cumle);
+	for(int i=0;cumle[i]!='\0';i++)
+	{
+		if(65<=cumle[i] && cumle[i]<=90) cumle[i]+=32;
+		else if(97<=cumle[i] && cumle[i]<=122) cumle[i]-=32;
+	printf("%c", cumle[i]);
+	}
+}
