@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+int asalhesabi(int a)
+{
+	int sonuc,kontrol=0;
+	for(int i=2;i<a;i++)
+	{
+		sonuc=a%i;
+		if(sonuc==0) return 0;
+	}
+	return 1;
+}
+
+
+int main()
+{
+	FILE *dosya1=fopen("sayilar.txt","r");
+	FILE *dosya2=fopen("sayilar2.txt","w");
+	
+	int sayi,sonuc;
+	while(!feof(dosya1))
+	{
+		fscanf(dosya1,"%d",&sayi);
+		sonuc=asalhesabi(sayi);
+		if(sonuc==1) fprintf(dosya2,"%d\n",sayi);
+	}
+	fclose(dosya2);
+}
+
+// Note: You need to add txt file with numbers
