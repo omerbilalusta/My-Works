@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct ders {
+
+int ders_kod;
+int vize;
+int final;
+double gecmenotu;
+}derss;
+
+struct sahis_bilgileri {
+char ad[40];
+char soyad[40];
+int No;
+}sahis_bilgilerii; 
+
+int main()
+{
+	float sonuc;
+	for(int i=1;i<=5;i++)
+	{
+		printf("Isminizi Giriniz"); scanf("%s", &sahis_bilgilerii.ad);
+		printf("Soyisim Giriniz"); scanf("%s", &sahis_bilgilerii.soyad);
+		printf("Numara Giriniz"); scanf("%d", &sahis_bilgilerii.No);
+		for(int y=1;y<=5;y++){
+		printf("\nders kodlarini giriniz"); scanf("%d", &derss.ders_kod);
+		printf("Vize Notunuzu Giriniz"); scanf("%d", &derss.vize);
+		printf("Final Notunuzu Giriniz"); scanf("%d", &derss.final);
+		derss.gecmenotu=derss.vize* 0.4+derss.final*0.6;
+		printf("Gecme Notunuz=  %f\n", derss.gecmenotu);
+		}
+	}
+}
