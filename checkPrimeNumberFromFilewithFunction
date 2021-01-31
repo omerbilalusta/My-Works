@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int isprime(int x,int i)
+{
+	if (i==x) 															// i sayısını aşağıda artırdık burdada x e eşit olduğunda onun asal olduğunu ve işlemi bitirmesini istiyoruz
+		return 0;
+	else if(i<x){
+		if(x%i==0) 														// burada sayı asal değilse asal olmadığını tespit ediyoruz 
+			return 1;
+		else{
+			return isprime(x,i+1); 										//  sayının hâlâ asal veya asal olmadığı testip edilmemişse bu satır sayesinde yeni i değeri ile tekrar kontroller sağlanır
+		}
+	}
+}
+
+int main()
+{
+	FILE *dosya=fopen("primes.txt","w"); 							    // içine yazacağımız dosyayı açtık
+	int sayi1,sayi2,sonuc,i=2; 										    // kullanacağımız değişkenleri tanımladık
+	printf("baslangic sayisi giriniz"); scanf("%d",&sayi1);  		    // 1. sayıyı aldık
+	printf("bitis sayisi giriniz"); scanf("%d",&sayi2);   				// 2. sayıyı aldık
+	if (sayi1>sayi2)
+	printf("Lutfen 1. sayiyi daha kucuk giriniz");
+	for(int x=sayi1;x<=sayi2;x++){  								    // 1. sayıdan 2. sayıya kadar olan sayıları test için sırayla fonksiyona göndereceğiz
+		sonuc=isprime(x,i); 										    // "isprime" fonksiyonunu çalıştırdık
+		if(sonuc==0)
+		fprintf(dosya,"Sayi asaldir== %d\n",x); 						// asal olan sayıları dosya içine yazdık
+		}
+	fclose(dosya);
+}
