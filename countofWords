@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+	char cumle[100],sayac=1,i;
+	printf("cumle giriniz");
+	gets(cumle);
+	for(int i=0;cumle[i]!='\0';i++)
+	{
+	if(cumle[i]==' ') sayac++;
+	}
+	printf("girdiginiz kelime sayisi= %d ", sayac);
+}
