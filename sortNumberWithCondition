@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<time.h>
+#include<conio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int dizi[100],gecici,minimum,a,b;													//değişkenleri ve diziyi tanımladık
+	
+	srand(time(NULL));																	
+	for(int i=0;i<100;i++)
+	{
+		dizi[i]=rand()%1000;															// rastegele sayılar bulup dizi içine teker teker yerleştirdik
+	}
+	for(int i=1;i<99;i=i+2)
+	{
+		minimum=i;
+		for(int j=i;j<100;j=j+2)a
+		{
+			if(dizi[j]<dizi[minimum])													// tekli indisleri küçükten büyüğe doğru sıraladık
+			minimum=j;			
+		}
+		gecici=dizi[i];																	//elemanların yerlerini değiştirdik
+		dizi[i]=dizi[minimum];
+		dizi[minimum]=gecici;
+	}
+	
+	printf("Tek indililerin kucukten buyuge siralamasi   \n\n");						//"ekrana tek indisler yazılacak" ekrana yazdık
+	for(int i=1;i<100;i=i+2)
+	{
+		printf("%d.indis=== %d\n", i,dizi[i]);											// yukarıda sıraladığımız tek indisli elemanları ekrana yazdırdık
+	}
+	printf("\n\n\n\n");																	// 4 satır boşluk yaptık
+	
+	printf("Cift indislilerin buyukten kucuge siralamasi   \n\n");						// "ekrana cift indisler yazılacak" ekrana yazdık 
+	
+	for(int i=0;i<100;i=i+2)
+	{
+        a=dizi[i];
+        b=i-2;
+    	while(b>=0 && dizi[b]<a)														//çift indisli elemanlar için büyükten küçüğe doğru sıralama yaptık
+		{
+       		dizi[b+2]=dizi[b];
+       		b=b-2;
+		}   
+		dizi[b+2]=a;
+	}
+	
+	for(int i=0;i<100;i=i+2)
+	{
+		printf("%d.indis===== %d\n",i,dizi[i]);											// sıralamasını yağtığımız çift indislileri ekrana yazdırdık
+	}
+	return 0;																			
+}
