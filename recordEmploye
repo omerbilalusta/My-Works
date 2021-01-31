@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+
+struct isci{
+	
+char adi[30];
+char soyadi[30];
+int yas;
+double aylikucret;
+
+}iscibilgi;
+
+int main()
+{
+	printf("isim gir"); gets(iscibilgi.adi);
+	printf("soyad"); gets(iscibilgi.soyadi);
+	printf("yas gir"); scanf("%d", &iscibilgi.yas);
+	printf("aylikücret"); scanf("%lf", &iscibilgi.aylikucret);
+	
+	printf("İsminiz=  %s\nSoyadiniz= %s\nYasiniz= %d\nAylikucretiniz= %lf", iscibilgi.adi, iscibilgi.soyadi, iscibilgi.yas, iscibilgi.aylikucret);
+	getch();
+}
