@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+int kombinasyon(int x, int y)
+{
+	double sonsonuc,sonuc1, sonuc2, sonuc3,carp1=1,carp2=1,carp3=1;
+	for(int i=1;i<=x;i++){
+		carp1=carp1*i;
+	}
+	for(int i=1;i<=y;i++){
+		carp2=carp2*i;
+	}
+	sonuc3=x-y;
+	for(int i=1;i<=sonuc3;i++){
+		carp3=carp3*i;
+	}
+	sonsonuc=carp1/(carp2*carp3);
+	return sonsonuc;
+}
+
+
+
+int main()
+{
+	int a,b,last;
+	printf("bir sayi giriniz");
+	scanf("%d", &a);
+	printf("bir sayi giriniz");
+	scanf("%d", &b);
+	last=kombinasyon(a,b);
+	printf("%d", last);
+	getch();
+}
