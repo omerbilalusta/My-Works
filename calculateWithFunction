@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+
+int toplama (int sayi)
+{
+	if(sayi==1)
+		return 1;
+	else
+		return sayi+toplama(sayi-1);
+}
+
+
+
+int main()
+{
+	int sayi;
+	printf("sayi giriniz");scanf("%d",&sayi);
+	printf("%d",toplama(sayi));
+	return 0;	
+}
