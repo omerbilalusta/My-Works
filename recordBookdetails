@@ -1,0 +1,32 @@
+#include<conio.h>
+#include<stdio.h>
+
+
+struct kitap
+{
+
+char ad[20];
+int yil;
+int no;
+float fiyat;
+float kazanc;
+}kitap_bilgi;
+
+struct kisi
+{
+char ad[20];
+}kisi_bilgi;
+
+
+int main ()
+{
+	for(int i=1;i<=5;i++){
+	printf("isminizi giriniz"); scanf("%s", kisi_bilgi.ad);
+	printf("kitap ismi giriniz"); scanf("%s", kitap_bilgi.ad);
+	printf("kitap basim yili giriniz"); scanf("%d", &kitap_bilgi.fiyat);
+	printf("kitap numarasi giriniz");scanf("%d", &kitap_bilgi.no);
+	printf("kitap fiyati giriniz\n"); scanf("%f", &kitap_bilgi.fiyat);
+	kitap_bilgi.kazanc=kitap_bilgi.kazanc+kitap_bilgi.fiyat;
+	}
+	printf("Kitapcinin kazanci =  %f", kitap_bilgi.kazanc);
+}
