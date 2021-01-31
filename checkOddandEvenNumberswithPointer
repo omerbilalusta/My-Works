@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main ()
+{
+	int sayi,sayactek=0,sayaccift=0;
+	int *A;													// pointerları ve değişkenleri tanımladık
+	int *B;
+
+	while(1){
+		printf("sayi giriniz:  ");
+		scanf("%d", &sayi);
+		if (sayi==0)										// 0 girildğinde program sonlanacak
+			break;
+		else if(sayi%2==0){									// çift sayıları tespit ettik
+			B=(int*)malloc(sizeof(int)*sayaccift+1);		// sayı girildikçe pointer için RAM'de yer açtık
+			B[sayaccift]=sayi;								        // çift sayıları pointer içine yazdık
+			sayaccift++;									// eğer çift bir sayı daha fazla girilmek istendiğinde bu değişkeni kullanacaz
+		}
+		else{
+			A=(int*)malloc(sizeof(int)*sayactek+1);			// tek sayıları tespit ettik
+			A[sayactek]=sayi;								// tek sayıları pointer içine yazdık
+			sayactek++;										// eğer tek bir sayı daha fazla girilmek istendiğinde bu değişkeni kullanacaz
+		}
+	}
+	return 0;
+}
