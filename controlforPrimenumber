@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+int prime(int x)
+{
+	int result, control=0;
+	for(int i=2;i<x;i++)
+	{
+		result=x%i;
+		if(result==0) control=1;
+	}
+	if(control==1) return control;
+	else return control;
+}
+
+
+
+
+int main()
+{
+	int a,result; 
+	printf("Write a number");
+	scanf("%d", &a);
+	result=prime(a);
+	if(result==0) printf("The number is prime number");
+	else printf("The number is not prime number");
+	getch();
+}
