@@ -2,22 +2,22 @@
 #include<conio.h>
 int ayirma(int x)
 {
-	int sonuc,toplam;
+	int result,total;
 	while(0<x)
 	{
-		sonuc=x%10;
+		result=x%10;
 		x=x/10;
-		toplam=toplam+sonuc;
+		total=total+result;
 	}
-	return toplam;
+	return total;
 }
 
 int main()
 {
-	int a,b,sonuc;
-	printf("Sayi giriniz");
+	int a,b,result;
+	printf("Write a number");
 	scanf("%d", &a);
-	sonuc=ayirma(a);
-	printf("Sonuc:    %d", sonuc);
+	result=ayirma(a);
+	printf("Result:    %d", result);
 	getch();
 }
