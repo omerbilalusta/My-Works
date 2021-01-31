@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+int ayirma(int x)
+{
+	int sonuc,toplam;
+	while(0<x)
+	{
+		sonuc=x%10;
+		x=x/10;
+		toplam=toplam+sonuc;
+	}
+	return toplam;
+}
+
+int main()
+{
+	int a,b,sonuc;
+	printf("Sayi giriniz");
+	scanf("%d", &a);
+	sonuc=ayirma(a);
+	printf("Sonuc:    %d", sonuc);
+	getch();
+}
