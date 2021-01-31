@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+
+int main ()
+{
+	FILE 	*dosya1=fopen("sayilar0.txt", "w");
+	FILE 	*dosya2=fopen("sayilar1.txt", "w");
+	int x,y,k=16,j=8,z=4;
+	z=~z;
+	srand(time(NULL));
+    for(int i=1;i<=100;i++)
+    {
+		x=rand()%100;
+		y=x|k;
+		if(y!=x)
+	{
+		x|=j;
+		fprintf(dosya1,"%d-) %d\n",i,x);
+	}
+	else
+	{
+		x&=z;
+		fprintf(dosya2,"%d-) %d\n",i,x);
+	}
+	}
+	return 0;
+	fclose(dosya1);
+	fclose(dosya2);
+}
