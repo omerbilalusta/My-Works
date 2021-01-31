@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <conio.h>
+int main ()
+{
+	FILE *dosya=fopen("sayilar.txt","w");
+	int sayi;
+	srand(time(NULL));
+	for (int i=0;i<100;i++){
+		sayi=rand()%1000;
+		fprintf(dosya,"%d\n",sayi);
+	}
+	fclose(dosya);
+	return 0;
+}
